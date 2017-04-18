@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load happenings_tags %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-sm-11">
+        {% upcoming_events finish=365 num=8 %}
+        </div>
+
+    </div>
+
+</div>
+
+<!--<div class='row'>-->
+<!--<div class='col-sm-6 col-sm-offset-3'>-->
+    <!--<div class='row'>-->
+        <!--<div class='col-sm-6 col-sm-offset-3 text-align-center-black'>-->
+            <!--<h1>Polls</h1>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--{% if latest_question_list %}-->
+    <!--<ul>-->
+    <!--{% for question in latest_question_list %}-->
+        <!--<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>-->
+    <!--{% endfor %}-->
+    <!--</ul>-->
+    <!--{% else %}-->
+    <!--<p>No polls are available.</p>-->
+    <!--{% endif %}-->
+
+<!--</div>-->
+
+<!--</div>-->
+
+
+{% endblock %}
+
+

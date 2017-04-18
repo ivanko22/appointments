@@ -1,0 +1,34 @@
+{% load happenings_tags %}
+
+
+<div id="event-calendar">
+    {% show_calendar request %}
+</div>
+
+{% upcoming_events %}
+
+<div class='row'>
+
+<div id="event-calendar" class="calendar-mini">
+    {% show_calendar request mini=True %}
+</div>
+
+</div>
+
+
+
+{% upcoming_events finish=365 num=8 %}
+
+{% current_happenings %}
+
+<!--{% extends 'happenings/base.html' %}-->
+
+<!--{% load happenings_tags %}-->
+
+<!--<div id="event-calendar" class="calendar-mini">-->
+    <!--{% show_calendar request mini=True %}-->
+<!--</div>-->
+
+
+
+<!--{% upcoming_events finish=365 num=8 %}-->
