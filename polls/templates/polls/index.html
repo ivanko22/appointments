@@ -1,0 +1,39 @@
+
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+
+{% load happenings_tags %}
+{% load staticfiles %}
+
+<link href=" {% static 'happenings/css/calendar.css' %}" rel="stylesheet">
+<script src="{% static 'happenings/js/calendar.js' %}"></script>
+
+<div id="event-calendar">
+    {% show_calendar request %}
+</div>
+
+
+<div id="event-calendar" class="calendar-mini">
+    {% show_calendar request mini=True %}
+</div>
+
+
+
+{% upcoming_events %}
+
+
+{% upcoming_events finish=365 num=8 %}
+
+{% current_happenings %}
