@@ -23,7 +23,6 @@ from .models import Choice, Question
 #     # return HttpResponse(template.render(context, request))
 #     return render(request, 'polls/index.html', context)
 
-
 # def detail(request, question_id):
 #     try:
 #         question = Question.objects.get(pk=question_id)
@@ -45,6 +44,7 @@ def home(request):
     context = {
         'latest_question_list': latest_question_list,
     }
+    print latest_question_list
     # return HttpResponse(template.render(context, request))
     return render(request, 'polls/index.html', context)
 
