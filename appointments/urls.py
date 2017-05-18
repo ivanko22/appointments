@@ -17,6 +17,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^$', 'polls.views.home', name='home'),
+
     url(r'^polls/', include('polls.urls', namespace='polls')),
     # url(r'^polls/', include('polls.urls')),
     url(r'^calendar/', include('happenings.urls', namespace='calendar')),
