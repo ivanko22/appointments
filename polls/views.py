@@ -45,6 +45,7 @@ def home(request):
     context = {
         'latest_question_list': latest_question_list,
     }
+    print latest_question_list
     # return HttpResponse(template.render(context, request))
     return render(request, 'polls/index.html', context)
 
