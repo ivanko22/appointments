@@ -6,7 +6,8 @@
     {% if cal_error %}
         {{ cal_error }}
     {% endif %}
-    
+    <div class="container">
+
     <a href="{% url "calendar:list" %}{{ year }}/{{ month_num }}/">
         &larr; {% trans "Back to calendar" %}
     </a>
@@ -48,5 +49,7 @@
                 {% trans "Oops.. No events!" %}
             {% endfor %}
         </ul>
-    
+
+    </div>
+
 {% endblock content %}

@@ -120,15 +120,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static", 'static_root')
+# STATIC_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.join(BASE_DIR, "static", 'static_root'))))
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", 'static_root')
+
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static_in_pro", 'our_static'),
     # '/var/www/static/',
 )
 
+print 'STATIC_ROOT', STATIC_ROOT
+print 'STATICFILES_DIRS', STATICFILES_DIRS
+
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_in_env", 'media_root')
+print 'MEDIA_ROOT', MEDIA_ROOT
 
 #Crispy Form Tags Settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'

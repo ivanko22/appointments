@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render
 
 from .forms import ContactForm, SignUpForm
+from .models import SignUp
 
 # Create your views here.
 
@@ -10,7 +11,7 @@ STATIC_ROOT = "/var/www/example.com/static/"
 
 def home(request):
 
-    title = 'Welcome'
+    title = 'Sign Up now'
 
     #if request.user.is_authenticated():
         #title = 'my title %s' %(request.user)
@@ -41,6 +42,23 @@ def home(request):
         context = {
         'title': 'Thank you',
         }
+
+    if request.user.is_authenticated() and request.user.is_staff:
+        # print SignUp.objects.all()
+        queryset = SignUp.objects.all()
+        num = 0
+
+        for object in SignUp.objects.all():
+            print '#', num, object, object.full_name, object.timestamp
+            num += 1
+
+        context = {
+            'queryset': queryset
+        }
+
+
+
+
 
     return render(request, 'home.html', context)
 
